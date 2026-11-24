@@ -158,6 +158,17 @@ predicted Growth Script, native geometry, seed, and inference settings defined b
 the mainline workflow when generating a forecast. A generic text-to-image prompt
 does not reproduce AgroWM.
 
+## Intended use and limitations
+
+AgroWM supports research on developmental reasoning, source-conditioned crop image prediction, structured supervision, and phenotype-aware evaluation.
+
+- Evidence is limited to the prepared rice and maize distributions, including white-background plant photographs. Field images, new crops and unseen cultivars require separate validation.
+- The horizon describes elapsed time. Weather, treatment, soil and management records are not explicit model inputs.
+- A forecast is a generated appearance, not an observed future. Traits are image-plane proxies rather than calibrated physical measurements or yield predictions.
+- Growth-balanced pair selection, preprocessing and gallery construction affect the evaluation. A selected example is not a substitute for full validation.
+- Errors in predicted stages and numeric targets can propagate to image generation. Tutor results use privileged future information and are a reference, not a deployable fallback.
+- Exact historical comparisons require their original prompts, model versions, seeds and outputs. Closed API models may change.
+
 ## License
 
 **Built with Qwen.** PhenoClock adapters use [Apache-2.0](../LICENSE).

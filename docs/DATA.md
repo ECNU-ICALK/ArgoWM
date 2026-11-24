@@ -59,6 +59,9 @@ count. Small examples are not paper evaluations.
 | Rice | 20,000 | 2,000 | 79 | Front 672×896; top 896×672 |
 | Maize | 6,400 | 1,600 | 84 | Side 768×1280 |
 
+The split is by plant. In rice, 78 of the 79 validation cultivars also occur in
+training; the validation set therefore does not establish unseen-cultivar performance.
+
 The importer writes:
 
 ```text

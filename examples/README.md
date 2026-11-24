@@ -4,6 +4,8 @@ These **synthetic** text examples illustrate accepted output structure. They are
 not measured plants, model predictions, biological validation examples or input
 datasets for the published experiments.
 
+![Growth Script layouts for rice front, rice top, and maize side views.](../assets/growth-script-templates.png)
+
 | Example | View | Numeric format |
 |---|---|---|
 | [Rice front](rice_front_growth_script.txt) | Front | Named metrics, two decimals, signed changes |
