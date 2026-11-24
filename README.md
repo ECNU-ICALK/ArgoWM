@@ -5,7 +5,8 @@
 <p><strong>Reason about development. Then render growth.</strong></p>
 <p>Forecast the same plant over days to months from a single photograph.</p>
 <p><strong>English</strong> · <a href="README_zh-CN.md">简体中文</a></p>
-<p><a href="https://arxiv.org/abs/2611.26145">Paper (arXiv)</a> · <a href="#quick-start">Quick start</a> · <a href="docs/RESULTS.md">Results</a> · <a href="protocols/README.md">Prompts</a> · <a href="docs/RUNNING.md">Training &amp; evaluation</a></p>
+<p><a href="https://arxiv.org/abs/2611.26145">Paper (arXiv)</a> · <a href="https://github.com/ECNU-ICALK/ArgoWM">GitHub</a> · <a href="https://huggingface.co/ecnu-icalk/ArgoWM">Hugging Face</a></p>
+<p><a href="#quick-start">Quick start</a> · <a href="docs/RESULTS.md">Results</a> · <a href="protocols/README.md">Prompts</a> · <a href="docs/RUNNING.md">Training &amp; evaluation</a></p>
 
 </div>
 

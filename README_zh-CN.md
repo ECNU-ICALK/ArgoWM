@@ -4,7 +4,8 @@
 <p>Built with Qwen</p>
 <p><strong>先推理发育过程，再生成未来生长图像。</strong></p>
 <p><a href="README.md">English</a> · <strong>简体中文</strong></p>
-<p><a href="https://arxiv.org/abs/2611.26145">论文（arXiv）</a> · <a href="docs/INSTALL.md">安装</a> · <a href="docs/RUNNING.md">训练与推理</a> · <a href="docs/RESULTS.md">实验结果</a> · <a href="protocols/README.md">Prompt 与协议</a></p>
+<p><a href="https://arxiv.org/abs/2611.26145">论文（arXiv）</a> · <a href="https://github.com/ECNU-ICALK/ArgoWM">GitHub</a> · <a href="https://huggingface.co/ecnu-icalk/ArgoWM">Hugging Face</a></p>
+<p><a href="docs/INSTALL.md">安装</a> · <a href="docs/RUNNING.md">训练与推理</a> · <a href="docs/RESULTS.md">实验结果</a> · <a href="protocols/README.md">Prompt 与协议</a></p>
 </div>
 
 ![AgroWM：发育推理、Growth Script 与图像生成](assets/method-overview.png)

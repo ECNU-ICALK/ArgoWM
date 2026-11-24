@@ -4,8 +4,8 @@ Release **`agrowm-mainline-2026-11-24`** has two distributions:
 
 | Distribution | Contents | Local checkpoint handling |
 |---|---|---|
-| GitHub code repository | Training, inference, evaluation, prompts, recipes, examples and shared documentation | Weights are obtained separately and ignored by Git |
-| Hugging Face model repository | The same code snapshot plus the four final Ours parameter files | `checkpoints/` is included; parameter files use Git LFS |
+| [GitHub code repository](https://github.com/ECNU-ICALK/ArgoWM) | Training, inference, evaluation, prompts, recipes, examples and shared documentation | Weights are obtained separately and ignored by Git |
+| [Hugging Face model repository](https://huggingface.co/ecnu-icalk/ArgoWM) | The same code snapshot plus the four final Ours parameter files | `checkpoints/` is included; parameter files use Git LFS |
 
 Both contain the same [model release catalog](../configs/model_release.json).
 It records the release ID, component paths, base models, crop-specific protocols,
@@ -52,13 +52,12 @@ the code checkout root and accept absolute paths.
 
 ## Obtain model files from the Hub
 
-After the model repository is published, use its actual repository ID. Replace
-`YOUR_NAMESPACE/AgroWM` below; it is a placeholder, not an existing release URL.
-Run the command from the code checkout root, using an environment with the
+After the model files are published to [ecnu-icalk/ArgoWM](https://huggingface.co/ecnu-icalk/ArgoWM),
+run the command from the code checkout root, using an environment with the
 Hugging Face CLI installed:
 
 ```bash
-hf download YOUR_NAMESPACE/AgroWM \
+hf download ecnu-icalk/ArgoWM \
   --repo-type model --include 'checkpoints/**' --local-dir .
 ```
 
