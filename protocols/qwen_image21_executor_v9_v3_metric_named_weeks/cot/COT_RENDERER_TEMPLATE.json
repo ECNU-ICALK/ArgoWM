@@ -1,0 +1,50 @@
+{
+  "annotation_root_keys": [
+    "stage_reasoning",
+    "growth_plan",
+    "target_phenotype"
+  ],
+  "field_description_contract": "Public planning fields contain qualitative text only; named source/target numeric evidence is rendered locally from metric evidence.",
+  "growth_plan_line": "{section_label}: {text}. Metric = {metric_name}; {numeric_evidence}",
+  "numeric_evidence": {
+    "append_to": "growth_plan_only",
+    "binary_units": [
+      "binary_visibility"
+    ],
+    "formula": "change = target - source",
+    "omit_statuses": [
+      "pending",
+      "invalid",
+      "not_applicable"
+    ],
+    "percentage_units": [
+      "percent_of_full_image",
+      "percent_of_image_height",
+      "percent"
+    ],
+    "phenotype_is_qualitative_only": true
+  },
+  "numeric_evidence_format": "metric_named_v1",
+  "plant_color_development_semantics": {
+    "growth_plan": "qualitative visible source-to-target color transition",
+    "numeric_evidence_owner": "local_metric_renderer",
+    "numeric_metric_key": "yellow_brown_fraction",
+    "public_field": "plant_color_development",
+    "target_phenotype": "final visible target color state"
+  },
+  "sections": [
+    "Stage reasoning",
+    "Growth plan",
+    "Target phenotype"
+  ],
+  "stage_reasoning_lines": [
+    "Current stage: {current_stage}.",
+    "Future stage: {future_stage}."
+  ],
+  "target_phenotype_line": "{section_label}: {text}.",
+  "template_version": "wgsr_v9_cot_synthesis_v3",
+  "wrapper": [
+    "<GROWTH_COT>",
+    "</GROWTH_COT>"
+  ]
+}

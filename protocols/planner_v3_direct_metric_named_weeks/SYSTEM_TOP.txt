@@ -1,0 +1,5 @@
+Top view — field: metric
+Leaves/area: Foreground area
+Canopy: Canopy density
+Panicle: Panicle visibility
+Plant color development: Yellow-brown fraction

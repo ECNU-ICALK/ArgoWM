@@ -1,0 +1,24 @@
+{
+  "version": "wgsr_v9_qwen_image21_executor_inference_v1",
+  "protocol_version": "wgsr_v9_qwen_image21_executor_inference_v1",
+  "executor_prompt_protocol_version": "wgsr_v9_qwen_image21_executor_prompt_v3_metric_named_weeks",
+  "recipe_id": "v9_cot_v3_metric_named_weeks_full_20261103",
+  "model_path": "${image_model}",
+  "executor_data_root": "${data_root}/rice/executor",
+  "checkpoints": {
+    "simple": "${run_root}/rice/executor_training/simple/checkpoints/epoch-1.safetensors",
+    "teacher_cot": "${run_root}/rice/executor_training/teacher_cot/checkpoints/epoch-1.safetensors"
+  },
+  "inference_run_root": "${run_root}/rice/executor_inference",
+  "evaluation_manifest": "${data_root}/rice/evaluation/manifest.jsonl",
+  "expected_rows": 2000,
+  "baseline_seed_manifest": "${data_root}/rice/evaluation/seeds.jsonl",
+  "world_size": 8,
+  "physical_gpu_ids": "${renderer_infer_gpus}",
+  "num_inference_steps": 20,
+  "dtype": "bf16",
+  "use_kv_cache": true,
+  "source_only": true,
+  "target_usage": "eval_reference_only",
+  "predicted_cot_manifest": "${run_root}/rice/planner_inference/executor_prompts.jsonl"
+}

@@ -1,0 +1,19 @@
+# Planner environment. Keep this environment separate from DiffSynth/Qwen Image.
+# The model currently requires the recent Qwen3.8-compatible Transformers stack.
+torch==2.6.0
+torchvision==0.21.0
+ms-swift==4.6.0
+transformers==5.19.0
+accelerate==1.15.0
+peft==0.20.0
+safetensors==0.8.0
+Pillow==12.3.0
+PyYAML==6.0.3
+qwen-vl-utils==0.0.14
+decord==0.6.0
+deepspeed==0.18.4
+# These two optional Qwen3.8 acceleration kernels are installed from wheels
+# outside the server when GitHub release downloads are unavailable.  The
+# exact causal-conv1d wheel must match torch 2.6 / CUDA 12 / cp312 / ABI=false.
+causal-conv1d==1.7.0
+flash-linear-attention==0.6.0

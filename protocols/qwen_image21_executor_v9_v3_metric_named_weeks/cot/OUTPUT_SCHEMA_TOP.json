@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wgsr.local/v9/cot/v3/top.schema.json",
+  "title": "WGSR V9 v3 V7-style top GPT CoT annotation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stage_reasoning",
+    "growth_plan",
+    "target_phenotype"
+  ],
+  "properties": {
+    "stage_reasoning": {
+      "$ref": "#/$defs/stage_reasoning"
+    },
+    "growth_plan": {
+      "$ref": "#/$defs/top_plan"
+    },
+    "target_phenotype": {
+      "$ref": "#/$defs/top_phenotype"
+    }
+  },
+  "$defs": {
+    "stage_id": {
+      "type": "string",
+      "enum": [
+        "S1_tillering",
+        "S2_jointing",
+        "S3_booting",
+        "S4_heading_flowering",
+        "S5_early_grain_filling",
+        "S6_milk_waxy",
+        "S7_yellow_ripening",
+        "S8_maturity_senescence"
+      ]
+    },
+    "clean_text": {
+      "type": "string",
+      "minLength": 3,
+      "pattern": "^\\S(?:.*\\S)?$"
+    },
+    "stage_reasoning": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "current_stage",
+        "future_stage"
+      ],
+      "properties": {
+        "current_stage": {
+          "$ref": "#/$defs/stage_id"
+        },
+        "future_stage": {
+          "$ref": "#/$defs/stage_id"
+        }
+      }
+    },
+    "plan_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text"
+      ],
+      "properties": {
+        "text": {
+          "$ref": "#/$defs/clean_text"
+        }
+      }
+    },
+    "phenotype_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text"
+      ],
+      "properties": {
+        "text": {
+          "$ref": "#/$defs/clean_text"
+        }
+      }
+    },
+    "top_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "leaves_area",
+        "canopy",
+        "panicle",
+        "plant_color_development"
+      ],
+      "properties": {
+        "leaves_area": {
+          "$ref": "#/$defs/plan_entry"
+        },
+        "canopy": {
+          "$ref": "#/$defs/plan_entry"
+        },
+        "panicle": {
+          "$ref": "#/$defs/plan_entry"
+        },
+        "plant_color_development": {
+          "$ref": "#/$defs/plan_entry"
+        }
+      }
+    },
+    "top_phenotype": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "leaves_area",
+        "canopy",
+        "panicle",
+        "plant_color_development"
+      ],
+      "properties": {
+        "leaves_area": {
+          "$ref": "#/$defs/phenotype_entry"
+        },
+        "canopy": {
+          "$ref": "#/$defs/phenotype_entry"
+        },
+        "panicle": {
+          "$ref": "#/$defs/phenotype_entry"
+        },
+        "plant_color_development": {
+          "$ref": "#/$defs/phenotype_entry"
+        }
+      }
+    }
+  }
+}

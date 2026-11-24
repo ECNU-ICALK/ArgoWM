@@ -1,0 +1,18 @@
+{
+  "data_root": "data",
+  "run_root": "runs",
+  "planner_model": "models/Qwen3.8-27B",
+  "image_model": "models/Qwen-Image-2.1",
+  "diffsynth_repo": "third_party/DiffSynth-Studio",
+  "planner_env": ".venv-planner",
+  "renderer_env": ".venv-renderer",
+  "cache_tmpfs_root": "runs/cache-scratch",
+  "renderer_train_gpus": "0,1,2,3,4,5,6,7",
+  "renderer_infer_gpus": "0",
+  "rice_planner_gpus": "0,1",
+  "maize_planner_gpus": "0,1,2,3,4,5,6,7",
+  "rice_planner_adapter": null,
+  "maize_planner_adapter": null,
+  "rice_renderer_checkpoint": null,
+  "maize_renderer_checkpoint": null
+}

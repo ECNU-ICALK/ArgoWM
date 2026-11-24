@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cot-maize.local/v2/manual-organ-evidence.schema.json",
+  "title": "Maize sv1 manual tassel and ear visibility",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "image_id",
+    "tassel_presence",
+    "ear_presence"
+  ],
+  "properties": {
+    "image_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tassel_presence": {
+      "type": "string",
+      "enum": [
+        "visible",
+        "not_visible",
+        ""
+      ]
+    },
+    "ear_presence": {
+      "type": "string",
+      "enum": [
+        "visible",
+        "not_visible",
+        ""
+      ]
+    },
+    "plant_condition": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

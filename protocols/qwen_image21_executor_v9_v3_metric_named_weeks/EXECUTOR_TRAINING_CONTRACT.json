@@ -1,0 +1,46 @@
+{
+  "algorithm_version": "wgsr_v9_qwen_image21_executor_sft_v1",
+  "cot_bindings": "cot/VIEW_VARIABLE_BINDINGS.json",
+  "cot_version": "wgsr_v9_cot_synthesis_v3",
+  "diffsynth_fields": {
+    "edit_image": "source image condition",
+    "image": "target image supervision",
+    "prompt": "executor prompt"
+  },
+  "image_dropout": 0.0,
+  "numeric_evidence_format": "metric_named_v1",
+  "protocol_version": "wgsr_v9_qwen_image21_executor_prompt_v3_metric_named_weeks",
+  "source_cot_protocol": "protocols/v9_cot_synthesis_v3",
+  "source_cot_protocol_hash": "f4a9a3d31414cec85c33a55b12a147837dd3055dd03ad543474aaad6530104eb",
+  "split_contract": {
+    "plant_isolated": true,
+    "train_pair_groups": 10000,
+    "validation_pair_groups": 1000,
+    "views_per_pair_group": [
+      "front",
+      "top"
+    ]
+  },
+  "task": "source-conditioned temporal rice-plant image editing",
+  "time_condition": {
+    "canonical_field": "prediction_interval_weeks",
+    "exact_days": "audit_only",
+    "numeric_time_features": "derive from 7 * prediction_interval_weeks, never exact days",
+    "rounding": "max(1, (actual_interval_days + 3) // 7)",
+    "unit": "weeks"
+  },
+  "validation_during_training": false,
+  "variants": {
+    "simple": {
+      "condition": "fixed simple prompt and source image",
+      "growth_cot_source": null,
+      "planner_used": false
+    },
+    "teacher_cot": {
+      "condition": "fixed simple prompt, teacher-rendered growth CoT, and source image",
+      "growth_cot_source": "CoT v3 original provider artifact, derived only by inserting metric names; supervision condition only",
+      "planner_used_at_deployment": true,
+      "planner_used_at_training": false
+    }
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cot-maize.local/v2/pair-request.schema.json",
+  "title": "Maize sv1 temporal pair request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_id",
+    "view",
+    "protocol_sha256",
+    "source",
+    "target",
+    "actual_interval_days",
+    "prediction_interval_weeks",
+    "stage_delta",
+    "metric_evidence",
+    "manual_summary"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "view": {
+      "const": "sv1"
+    },
+    "protocol_sha256": {
+      "type": "string",
+      "minLength": 64
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "image_id",
+        "plant_id",
+        "stage_id",
+        "days_after_sowing",
+        "maize_stage",
+        "stage_description",
+        "path",
+        "image_sha256",
+        "plant_condition"
+      ],
+      "properties": {
+        "image_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "plant_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "maize_stage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stage_description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "image_sha256": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stage_id": {
+          "enum": [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6",
+            "S7",
+            "S8",
+            "S9"
+          ],
+          "type": "string"
+        },
+        "days_after_sowing": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "plant_condition": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "image_id",
+        "plant_id",
+        "stage_id",
+        "days_after_sowing",
+        "maize_stage",
+        "stage_description",
+        "path",
+        "image_sha256",
+        "plant_condition"
+      ],
+      "properties": {
+        "image_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "plant_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "maize_stage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stage_description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "image_sha256": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stage_id": {
+          "enum": [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6",
+            "S7",
+            "S8",
+            "S9"
+          ],
+          "type": "string"
+        },
+        "days_after_sowing": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "plant_condition": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "actual_interval_days": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "prediction_interval_weeks": {
+      "type": "number",
+      "minimum": 0
+    },
+    "stage_delta": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 8
+    },
+    "metric_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "culm",
+        "leaves_area",
+        "plant_density",
+        "plant_color_development"
+      ],
+      "properties": {
+        "culm": {
+          "$ref": "METRIC_EVIDENCE_SCHEMA.json"
+        },
+        "leaves_area": {
+          "$ref": "METRIC_EVIDENCE_SCHEMA.json"
+        },
+        "plant_density": {
+          "$ref": "METRIC_EVIDENCE_SCHEMA.json"
+        },
+        "plant_color_development": {
+          "$ref": "METRIC_EVIDENCE_SCHEMA.json"
+        }
+      }
+    },
+    "manual_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tassel",
+        "ear"
+      ],
+      "properties": {
+        "tassel": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source",
+            "target"
+          ],
+          "properties": {
+            "source": {
+              "type": "string",
+              "enum": [
+                "visible",
+                "not_visible",
+                "pending"
+              ]
+            },
+            "target": {
+              "type": "string",
+              "enum": [
+                "visible",
+                "not_visible",
+                "pending"
+              ]
+            }
+          }
+        },
+        "ear": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source",
+            "target"
+          ],
+          "properties": {
+            "source": {
+              "type": "string",
+              "enum": [
+                "visible",
+                "not_visible",
+                "pending"
+              ]
+            },
+            "target": {
+              "type": "string",
+              "enum": [
+                "visible",
+                "not_visible",
+                "pending"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

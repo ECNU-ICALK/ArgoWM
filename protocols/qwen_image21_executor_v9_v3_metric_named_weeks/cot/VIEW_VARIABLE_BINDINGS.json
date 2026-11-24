@@ -1,0 +1,103 @@
+{
+  "front": {
+    "algorithm_fields": {
+      "plant_density": "solidity"
+    },
+    "aliases": [
+      "side0",
+      "side90",
+      "front",
+      "front_view"
+    ],
+    "display_units": {
+      "culm": "percent_of_image_height",
+      "leaves_area": "percent_of_full_image",
+      "panicle": "binary_visibility",
+      "plant_color_development": "percent",
+      "plant_density": "percent"
+    },
+    "meanings": {
+      "culm": "Visible height proxy measured from the image bottom to the first foreground row.",
+      "leaves_area": "Visible foreground coverage of the full image.",
+      "panicle": "Excel-derived binary heading visibility label.",
+      "plant_color_development": "Visible plant color-development field backed by the yellow_brown_fraction numeric proxy; growth_plan describes source-to-target color progression and target_phenotype describes the target endpoint.",
+      "plant_density": "Visible two-dimensional stem-leaf projection fill proxy."
+    },
+    "metric_display_names": {
+      "culm": "Height",
+      "leaves_area": "Foreground area",
+      "panicle": "Panicle visibility",
+      "plant_color_development": "Yellow-brown fraction",
+      "plant_density": "Solidity"
+    },
+    "metric_keys": {
+      "culm": "front_height_from_image_bottom_pct",
+      "leaves_area": "visible_foreground_area_pct",
+      "panicle": "panicle_visibility",
+      "plant_color_development": "yellow_brown_fraction",
+      "plant_density": "solidity"
+    },
+    "numeric_evidence_format": "metric_named_v1",
+    "ordered_keys": [
+      "culm",
+      "leaves_area",
+      "plant_density",
+      "panicle",
+      "plant_color_development"
+    ],
+    "section_labels": {
+      "culm": "Culm",
+      "leaves_area": "Leaves/area",
+      "panicle": "Panicle",
+      "plant_color_development": "Plant color development",
+      "plant_density": "Plant density"
+    }
+  },
+  "protocol_version": "wgsr_v9_cot_synthesis_v3",
+  "top": {
+    "algorithm_fields": {
+      "canopy": "solidity"
+    },
+    "aliases": [
+      "top",
+      "top_view"
+    ],
+    "display_units": {
+      "canopy": "percent",
+      "leaves_area": "percent_of_full_image",
+      "panicle": "binary_visibility",
+      "plant_color_development": "percent"
+    },
+    "meanings": {
+      "canopy": "Projected canopy density computed from the top-view convex-hull fill proxy.",
+      "leaves_area": "Visible projected foreground coverage of the full image.",
+      "panicle": "Excel-derived binary heading visibility label.",
+      "plant_color_development": "Visible plant color-development field backed by the yellow_brown_fraction numeric proxy; growth_plan describes source-to-target color progression and target_phenotype describes the target endpoint."
+    },
+    "metric_display_names": {
+      "canopy": "Canopy density",
+      "leaves_area": "Foreground area",
+      "panicle": "Panicle visibility",
+      "plant_color_development": "Yellow-brown fraction"
+    },
+    "metric_keys": {
+      "canopy": "canopy_density",
+      "leaves_area": "visible_foreground_area_pct",
+      "panicle": "panicle_visibility",
+      "plant_color_development": "yellow_brown_fraction"
+    },
+    "numeric_evidence_format": "metric_named_v1",
+    "ordered_keys": [
+      "leaves_area",
+      "canopy",
+      "panicle",
+      "plant_color_development"
+    ],
+    "section_labels": {
+      "canopy": "Canopy",
+      "leaves_area": "Leaves/area",
+      "panicle": "Panicle",
+      "plant_color_development": "Plant color development"
+    }
+  }
+}

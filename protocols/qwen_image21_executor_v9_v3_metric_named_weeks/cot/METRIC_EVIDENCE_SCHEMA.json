@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wgsr.local/v9/cot/metric-evidence.schema.json",
+  "title": "WGSR V9 metric evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["metric_key", "source", "target", "unit", "algorithm_version", "qc"],
+  "properties": {
+    "metric_key": { "type": "string", "minLength": 1 },
+    "source": { "$ref": "#/$defs/observation" },
+    "target": { "$ref": "#/$defs/observation" },
+    "unit": { "type": "string", "minLength": 1 },
+    "algorithm_version": { "type": "string", "minLength": 1 },
+    "qc": { "$ref": "#/$defs/qc" }
+  },
+  "$defs": {
+    "status": {
+      "type": "string",
+      "enum": ["available", "pending", "invalid", "not_applicable"]
+    },
+    "number_or_null": { "type": ["number", "null"] },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "status"],
+      "properties": {
+        "value": { "$ref": "#/$defs/number_or_null" },
+        "status": { "$ref": "#/$defs/status" }
+      }
+    },
+    "qc": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["valid", "reason_codes"],
+      "properties": {
+        "valid": { "type": "boolean" },
+        "reason_codes": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+        "color_coverage": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "boundary_contact": { "type": "boolean" },
+        "bottom_gap": { "type": ["number", "null"], "minimum": 0, "maximum": 100 }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<GROWTH_COT>
+Stage reasoning
+Current stage: S1_tillering.
+Future stage: S2_jointing.
+
+Growth plan
+Culm: Taller culms. Metric = Height; Source = 29.24%; Target = 50.89%; Change = +21.65 pp.
+Leaves/area: More leaves. Metric = Foreground area; Source = 0.81%; Target = 1.56%; Change = +0.75 pp.
+Plant density: More open. Metric = Solidity; Source = 34.27%; Target = 13.73%; Change = -20.55 pp.
+Panicle: No panicle. Metric = Panicle visibility; Source = not visible; Target = not visible; Change = +0.
+Plant color development: More yellow. Metric = Yellow-brown fraction; Source = 5.39%; Target = 16.28%; Change = +10.89 pp.
+
+Target phenotype
+Culm: Taller.
+Leaves/area: More leaves.
+Plant density: Open projection.
+Panicle: No visible panicle.
+Plant color development: Mostly green.
+</GROWTH_COT>

@@ -1,0 +1,21 @@
+name: CPU contracts
+on: [push, pull_request]
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements/cpu.txt
+      - run: python -m pip install -r requirements/cpu.txt
+      - run: python -m pip install --no-deps -e .
+      - run: python -m compileall -q src scripts
+      - run: >-
+          python -m unittest -v
+          tests.test_release_data tests.test_release_config tests.test_mainline_protocols
+          tests.test_text_executor_release
+          tests.test_evaluation_io tests.test_image_evaluation_workers
+          tests.test_image_geometry_evaluation tests.test_v9_image_metrics

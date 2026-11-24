@@ -1,0 +1,47 @@
+{
+  "template_version": "maize_sv1_cot_v2_en_v2",
+  "wrapper": [
+    "<GROWTH_COT>",
+    "</GROWTH_COT>"
+  ],
+  "sections": [
+    "Stage reasoning",
+    "Growth plan",
+    "Target phenotype"
+  ],
+  "stage_reasoning_lines": [
+    "Current stage: {current_stage}.",
+    "Future stage: {future_stage}."
+  ],
+  "growth_plan_line": "{section_label}: {text}. {numeric_evidence}",
+  "target_phenotype_line": "{section_label}: {text}.",
+  "numeric_evidence": {
+    "append_to": "growth_plan_only",
+    "formula": "change = target - source",
+    "omit_statuses": [
+      "pending",
+      "invalid",
+      "not_applicable"
+    ],
+    "phenotype_is_qualitative_only": true,
+    "provisional_policy": "omit_by_default; explicit diagnostic opt-in appends provisional label",
+    "rounding": "decimal_half_up_one_decimal; compute change before rounding",
+    "fraction_display": "multiply fractions by 100; changes are percentage points"
+  },
+  "manual_presence_rendering": {
+    "status_values": [
+      "visible",
+      "not_visible",
+      "pending"
+    ],
+    "unknown_statuses": [
+      "pending"
+    ],
+    "rule": "Render Source and Target separately in growth_plan; pending remains unknown, never absent."
+  },
+  "annotation_root_keys": [
+    "stage_reasoning",
+    "growth_plan",
+    "target_phenotype"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "model": "${planner_model}",
+  "adapter": "${maize_planner_adapter}",
+  "data_root": "${data_root}/maize/planner",
+  "expected_rows": 1600,
+  "max_pixels": 983040,
+  "max_new_tokens": 2048,
+  "max_length": 4096,
+  "max_memory_per_gpu": "20GiB",
+  "cot_version": "v3",
+  "numeric_evidence_format": "maize_sv1_v1",
+  "time_condition_unit": "days",
+  "planner_protocol_version": "wgsr_maize_planner_direct_days_v1",
+  "enable_thinking": false,
+  "output_wrapper": "GROWTH_COT",
+  "evaluation_manifest": "${data_root}/maize/evaluation/manifest.jsonl"
+}

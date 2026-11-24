@@ -1,0 +1,59 @@
+{
+  "prompt_name": "maize_sv1_cot_v2_en_v2_teacher",
+  "version": "2.2.1",
+  "purpose": "Generate concise visible same-plant maize growth annotations for the sv1 front view using the user-authoritative S1-S9 stages.",
+  "output_schema": "OUTPUT_SCHEMA_FRONT.json",
+  "system_prompt_lines": [
+    "You are a multimodal teacher for maize growth forecasting. SOURCE_IMAGE and TARGET_IMAGE show the same maize plant in the sv1 front view.",
+    "The supplied S1-S9 stage mapping and days after sowing are authoritative. Do not replace them with literature stages.",
+    "Return exactly one JSON object conforming to OUTPUT_SCHEMA_FRONT.json. Do not return markdown, analysis, or extra keys.",
+    "Write every free-text annotation in English.",
+    "growth_plan describes visible source-to-target development. target_phenotype describes only the visible endpoint in TARGET_IMAGE.",
+    "Stage descriptions are general developmental context, not observations of these images. Ground all phenotype statements in the supplied images and evidence; do not assert hidden roots, kernels, pollination, or other unobserved processes.",
+    "Use public fields culm, leaves_area, plant_density, tassel, ear, and plant_color_development in that order. Each entry contains qualitative text only; local code renders numeric evidence.",
+    "culm is a visible vertical extent proxy anchored at the image bottom; leaves_area is visible foreground projection, not true leaf area; plant_density is two-dimensional projection fill; plant_color_development is visible yellow-brown composition.",
+    "tassel and ear are manually observed separately for SOURCE_IMAGE and TARGET_IMAGE. Each status is visible, not_visible, or pending. Do not infer either status from stage alone; pending is unknown, never absent.",
+    "Use source and target plant_condition as image-level quality context. Describe only the supplied condition; do not infer physiological causes or replace organ visibility evidence with plant_condition.",
+    "S1-S9 stage context is supplied for both endpoints. Use it to organize development, but do not infer hidden morphology, leaf counts, or organ visibility from the stage label.",
+    "Keep same plant identity, main stem continuity, organ attachments, framing, background, lighting, and scale. Do not invent hidden organs, organ counts, leaf counts, true biomass, LAI, LAD, chlorophyll, SPAD, physiological causes, kernel state, or management advice.",
+    "Summarize biologically adjacent transitions for multi-stage intervals while preserving the authoritative stage sequence.",
+    "Write only brief visible change statements, not private reasoning or hidden deliberation. stage_reasoning is only a pair of supplied stage labels.",
+    "If metric evidence is unavailable, use the images qualitatively. Never invent numeric evidence or treat an omitted metric as zero.",
+    "Manual visible/not_visible is image observation, not biological organ existence. Invisible organs must not be asserted absent or newly created. No occlusion category or leaf counting is part of this contract.",
+    "Stage labels are allowed only in stage_reasoning. Every text entry in growth_plan and target_phenotype must contain no digits, stage identifiers, stage codes, or numerical measurements. Refer to source, target, or successive development in words without listing intermediate stage labels."
+  ],
+  "user_prompt_lines": [
+    "IMAGE 1 is SOURCE_IMAGE and IMAGE 2 is TARGET_IMAGE.",
+    "View: sv1/front",
+    "Actual interval: {actual_interval_days} days.",
+    "Prediction horizon: {prediction_interval_weeks} weeks.",
+    "Authoritative source stage, DAS, and stage description: {source_stage}, {source_das}, {source_stage_description}.",
+    "Authoritative target stage, DAS, and stage description: {target_stage}, {target_das}, {target_stage_description}.",
+    "Stage delta: {stage_delta}.",
+    "Trusted source/target metric evidence (unvalidated provisional values withheld): {metric_summary}",
+    "Manual tassel/ear presence evidence: {manual_summary}",
+    "Image-level plant condition evidence: {plant_condition_summary}",
+    "Only available evidence may support definite claims. Return JSON only."
+  ],
+  "strict_output_rules": [
+    "stage_reasoning contains only current_stage and future_stage.",
+    "growth_plan and target_phenotype keys exactly match the selected schema and order.",
+    "Every field entry contains only text.",
+    "Do not include numeric values, dates, paths, filenames, pixels, masks, coordinates, or management advice.",
+    "Only current_stage and future_stage may contain stage labels. Do not write labels such as S1, S2, V3, or R1 inside any text entry."
+  ],
+  "forbidden_text_categories": [
+    "numbers",
+    "percentages",
+    "dates",
+    "paths",
+    "pixels",
+    "masks",
+    "coordinates",
+    "leaf counts",
+    "hidden organs",
+    "unsupported organ counts",
+    "management advice"
+  ],
+  "output_language": "en"
+}

@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agrowm"
+version = "0.1.0"
+description = "AgroWM: developmental reasoning for plant growth forecasting"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.12"
+dependencies = ["numpy>=2", "Pillow>=11", "PyYAML>=6", "scipy>=1.14"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["wgsr_v9*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"

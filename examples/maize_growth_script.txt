@@ -1,0 +1,21 @@
+<GROWTH_COT>
+Stage reasoning
+Current stage: S5.
+Future stage: S6.
+
+Growth plan
+Culm: The topmost visible plant tissue rises in the image as the plant approaches tasseling. Source=70.0%; Target=78.0%; Change=8.0 pp.
+Visible foreground area: Expanded upper leaves occupy more of the image. Source=7.0%; Target=9.0%; Change=2.0 pp.
+Projected fill: The elongated silhouette becomes slightly more open. Source=35.0%; Target=33.0%; Change=-2.0 pp.
+Tassel: No tassel is visible in the source; an emerged tassel is expected above the upper leaves.
+Ear: An ear is not clearly visible in the source and is expected to remain indistinct from this view.
+Visible yellow-brown composition: A small increase in yellow-brown tissue leaves the canopy mostly green. Source=3.0%; Target=4.0%; Change=1.0 pp.
+
+Target phenotype
+Culm: An elongated visible stem supports the upper canopy.
+Visible foreground area: Broad, expanded leaves occupy more of the image.
+Projected fill: The side-view silhouette is moderately open.
+Tassel: An emerged tassel is visible at the top.
+Ear: No distinct ear is visible from this view.
+Visible yellow-brown composition: The plant remains predominantly green with limited yellow-brown tissue.
+</GROWTH_COT>

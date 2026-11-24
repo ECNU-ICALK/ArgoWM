@@ -1,0 +1,17 @@
+{
+  "model": "${planner_model}",
+  "adapter": "${rice_planner_adapter}",
+  "data_root": "${data_root}/rice/planner",
+  "expected_rows": 2000,
+  "max_pixels": 602112,
+  "max_new_tokens": 2048,
+  "max_length": 4096,
+  "max_memory_per_gpu": "80GiB",
+  "cot_version": "v3",
+  "numeric_evidence_format": "metric_named_v1",
+  "time_condition_unit": "weeks",
+  "planner_protocol_version": "wgsr_v9_planner_v3_direct_metric_named_weeks_v1",
+  "enable_thinking": false,
+  "output_wrapper": "GROWTH_COT",
+  "evaluation_manifest": "${data_root}/rice/evaluation/manifest.jsonl"
+}

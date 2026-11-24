@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "release_id": "agrowm-mainline-2026-11-24",
+  "method": "AgroWM",
+  "weight_scope": "Ours only",
+  "components": [
+    {
+      "crop": "rice",
+      "component": "phenoclock",
+      "base_model": "Qwen/Qwen3.8-27B",
+      "format": "peft_lora",
+      "training_point": {
+        "epochs": 2,
+        "step": 2500
+      },
+      "weight_file": "checkpoints/rice/phenoclock/adapter_model.safetensors",
+      "size_bytes": 933974032,
+      "sha256": "8f02194330f037d6882cc91be2e3bb3dbfc26b3b5843aa01878d93b98150ec3a",
+      "tensor_count": 992,
+      "parameter_count": 233455616,
+      "tensor_dtypes": {
+        "F32": 992
+      },
+      "license": "apache-2.0",
+      "weight_bytes_modified_for_release": false
+    },
+    {
+      "crop": "maize",
+      "component": "phenoclock",
+      "base_model": "Qwen/Qwen3.8-27B",
+      "format": "peft_lora",
+      "training_point": {
+        "epochs": 2,
+        "step": 800
+      },
+      "weight_file": "checkpoints/maize/phenoclock/adapter_model.safetensors",
+      "size_bytes": 467063552,
+      "sha256": "4d7ce12e54a8275c43e2649301c31edb5a2a85652783b17a1d98fe325b8a05c9",
+      "tensor_count": 992,
+      "parameter_count": 233455616,
+      "tensor_dtypes": {
+        "BF16": 992
+      },
+      "license": "apache-2.0",
+      "weight_bytes_modified_for_release": false
+    },
+    {
+      "crop": "rice",
+      "component": "rooted_renderer",
+      "base_model": "Qwen/Qwen-Image-2.1",
+      "format": "diffusers_transformer",
+      "training_point": {
+        "epochs": 2,
+        "step": 2500
+      },
+      "weight_file": "checkpoints/rice/rooted_renderer/diffusion_pytorch_model.safetensors",
+      "size_bytes": 14230284584,
+      "sha256": "545a91b5bb832e19787d073cdc8609e387aef831b06718031a05898a4a556708",
+      "tensor_count": 297,
+      "parameter_count": 7115124736,
+      "tensor_dtypes": {
+        "BF16": 297
+      },
+      "license": "qwen-research",
+      "weight_bytes_modified_for_release": false
+    },
+    {
+      "crop": "maize",
+      "component": "rooted_renderer",
+      "base_model": "Qwen/Qwen-Image-2.1",
+      "format": "diffusers_transformer",
+      "training_point": {
+        "epochs": 2,
+        "step": 800
+      },
+      "weight_file": "checkpoints/maize/rooted_renderer/diffusion_pytorch_model.safetensors",
+      "size_bytes": 14230284584,
+      "sha256": "a5385aa6df6c211c488b451acd611a26fabda96ef3142a3f949454f278792f60",
+      "tensor_count": 297,
+      "parameter_count": 7115124736,
+      "tensor_dtypes": {
+        "BF16": 297
+      },
+      "license": "qwen-research",
+      "weight_bytes_modified_for_release": false
+    }
+  ],
+  "crop_protocols": {
+    "rice": {
+      "planner_protocol_version": "wgsr_v9_planner_v3_direct_metric_named_weeks_v1",
+      "numeric_evidence_format": "metric_named_v1",
+      "time_condition_unit": "weeks",
+      "enable_thinking": false,
+      "output_wrapper": "GROWTH_COT",
+      "executor_prompt_protocol_version": "wgsr_v9_qwen_image21_executor_prompt_v3_metric_named_weeks"
+    },
+    "maize": {
+      "planner_protocol_version": "wgsr_maize_planner_direct_days_v1",
+      "numeric_evidence_format": "maize_sv1_v1",
+      "time_condition_unit": "days",
+      "enable_thinking": false,
+      "output_wrapper": "GROWTH_COT",
+      "executor_prompt_protocol_version": "wgsr_maize_executor_days_v1"
+    }
+  },
+  "code_license": "apache-2.0",
+  "weight_license_scope": "PhenoClock: Apache-2.0; Rooted Renderer: Qwen Research License."
+}

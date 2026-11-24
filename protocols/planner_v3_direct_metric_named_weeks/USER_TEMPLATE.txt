@@ -1,0 +1,8 @@
+<image>
+Predict the future visible state of this rice plant and return the structured growth plan.
+
+Rice accession ID: {accession_id}
+View: {view_label}
+Prediction interval: {prediction_interval_weeks} weeks.
+
+Return exactly one <GROWTH_COT> block using the field order and metric definitions for this view.

@@ -1,0 +1,17 @@
+<GROWTH_COT>
+Stage reasoning
+Current stage: S1_tillering.
+Future stage: S2_jointing.
+
+Growth plan
+Leaves/area: Expanded leaves occupy more of the top-view image. Metric = Foreground area; Source = 8.00%; Target = 12.00%; Change = +4.00 pp.
+Canopy: Leaf expansion fills more of the projected canopy. Metric = Canopy density; Source = 48.00%; Target = 53.00%; Change = +5.00 pp.
+Panicle: No panicle. Metric = Panicle visibility; Source = not visible; Target = not visible; Change = +0.
+Plant color development: A small increase in yellow-brown tissue leaves the canopy predominantly green. Metric = Yellow-brown fraction; Source = 3.00%; Target = 4.00%; Change = +1.00 pp.
+
+Target phenotype
+Leaves/area: Expanded leaves cover more of the image.
+Canopy: The projected canopy is fuller and more densely occupied.
+Panicle: No visible panicle.
+Plant color development: Mostly green.
+</GROWTH_COT>

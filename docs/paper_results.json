@@ -1,0 +1,126 @@
+{
+  "source": {
+    "title": "Can World Models Predict Rice Growth? Toward Agricultural World Models",
+    "kind": "reported_manuscript_results",
+    "tables": [
+      "Table 1",
+      "Table 2"
+    ],
+    "new_evaluation": false
+  },
+  "units": {
+    "dino_cosine": "cosine similarity",
+    "area_mae_pp": "percentage points",
+    "height_mae_pp": "percentage points",
+    "density_mae_pp": "percentage points",
+    "yellow_mae_pp": "percentage points",
+    "stage_r1_percent": "percent",
+    "event_r1_percent": "percent"
+  },
+  "rice": {
+    "nominal_validation_queries": 2000,
+    "rows": [
+      {
+        "method": "GPT Image 2",
+        "dino_cosine": 0.709,
+        "area_mae_pp": 5.59,
+        "height_mae_pp": 11.49,
+        "density_mae_pp": 6.31,
+        "yellow_mae_pp": 24.4,
+        "stage_r1_percent": 35.3,
+        "event_r1_percent": 12.8
+      },
+      {
+        "method": "GPT Image 2.5",
+        "dino_cosine": 0.721,
+        "area_mae_pp": 6.92,
+        "height_mae_pp": 12.57,
+        "density_mae_pp": 6.7,
+        "yellow_mae_pp": 29.17,
+        "stage_r1_percent": 34.8,
+        "event_r1_percent": 10.8
+      },
+      {
+        "method": "Qwen Image 2.1",
+        "dino_cosine": 0.693,
+        "area_mae_pp": 7.85,
+        "height_mae_pp": 18.28,
+        "density_mae_pp": 6.83,
+        "yellow_mae_pp": 32.31,
+        "stage_r1_percent": 24.0,
+        "event_r1_percent": 1.1
+      },
+      {
+        "method": "Source copy",
+        "dino_cosine": 0.702,
+        "area_mae_pp": 7.17,
+        "height_mae_pp": 19.06,
+        "density_mae_pp": 6.24,
+        "yellow_mae_pp": 29.33,
+        "stage_r1_percent": 23.2,
+        "event_r1_percent": 0.0
+      },
+      {
+        "method": "Qwen Image 2.1 FT / Simple",
+        "dino_cosine": 0.834,
+        "area_mae_pp": 3.73,
+        "height_mae_pp": 7.83,
+        "density_mae_pp": 5.33,
+        "yellow_mae_pp": 11.43,
+        "stage_r1_percent": 47.4,
+        "event_r1_percent": 22.5
+      },
+      {
+        "method": "AgroWM",
+        "dino_cosine": 0.86,
+        "area_mae_pp": 3.51,
+        "height_mae_pp": 7.43,
+        "density_mae_pp": 4.98,
+        "yellow_mae_pp": 10.0,
+        "stage_r1_percent": 54.6,
+        "event_r1_percent": 24.8
+      }
+    ]
+  },
+  "maize": {
+    "nominal_validation_queries": 1600,
+    "rows": [
+      {
+        "method": "Source copy",
+        "dino_cosine": 0.522,
+        "area_mae_pp": 3.62,
+        "height_mae_pp": 33.02,
+        "stage_r1_percent": 0.0
+      },
+      {
+        "method": "GPT Image 2",
+        "dino_cosine": 0.727,
+        "area_mae_pp": 2.63,
+        "height_mae_pp": 16.64,
+        "stage_r1_percent": 21.1
+      },
+      {
+        "method": "Qwen Image 2.1 FT / Simple",
+        "dino_cosine": 0.764,
+        "area_mae_pp": 1.97,
+        "height_mae_pp": 11.12,
+        "stage_r1_percent": 30.1
+      },
+      {
+        "method": "AgroWM",
+        "dino_cosine": 0.795,
+        "area_mae_pp": 1.73,
+        "height_mae_pp": 10.61,
+        "stage_r1_percent": 30.9
+      }
+    ]
+  },
+  "rice_long_horizon": {
+    "weeks": [
+      9,
+      20
+    ],
+    "agrowm_stage_r1_percent": 46.4,
+    "simple_ft_stage_r1_percent": 35.7
+  }
+}

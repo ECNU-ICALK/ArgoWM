@@ -1,0 +1,28 @@
+{
+  "protocol_version": "wgsr_v9_planner_v3_direct_metric_named_weeks_v1",
+  "cot_version": "v3",
+  "numeric_evidence_format": "metric_named_v1",
+  "time_condition_unit": "weeks",
+  "enable_thinking": false,
+  "output_wrapper": "GROWTH_COT",
+  "assistant_contract": "<GROWTH_COT>\\n{existing_executor_teacher_body}\\n</GROWTH_COT>",
+  "system_prompt": {
+    "common": "SYSTEM_COMMON.txt",
+    "front": "SYSTEM_FRONT.txt",
+    "top": "SYSTEM_TOP.txt",
+    "join": "two newlines"
+  },
+  "user_template": "USER_TEMPLATE.txt",
+  "known_input_conditions": [
+    "source_image",
+    "accession_id",
+    "view",
+    "prediction_interval_weeks"
+  ],
+  "week_formula": "max(1, (actual_interval_days + 3) // 7)",
+  "exact_days": "audit_metadata_only",
+  "executor_protocol_version": "wgsr_v9_qwen_image21_executor_prompt_v3_metric_named_weeks",
+  "metrics_binding_file": "protocols/qwen_image21_executor_v9_v3_metric_named_weeks/cot/VIEW_VARIABLE_BINDINGS.json",
+  "continuous_change_rounding_tolerance_pp": 0.01,
+  "description": "Compact per-view system prompts; existing v3 teacher body unchanged; source-only direct structured answer."
+}

@@ -1,0 +1,17 @@
+AgroWM
+Built with Qwen.
+
+PhenoClock is based on Qwen3.8-27B.
+Copyright 2026 Alibaba Cloud.
+Upstream terms: licenses/Qwen3.8-27B-LICENSE.txt (Apache License 2.0).
+The released adapter_model.safetensors files are crop-specific LoRA adapters
+trained by the AgroWM project. Adapter configuration base paths have been changed
+to the public model identifier for portability.
+
+Rooted Renderer is based on Qwen Image 2.1.
+Qwen is licensed under the Qwen RESEARCH LICENSE AGREEMENT, Copyright (c) 2026 Hangzhou Tongyi Laboratory Technology Co., Ltd. All Rights Reserved.
+Upstream terms: licenses/Qwen-Image-2.1-LICENSE.txt.
+The released diffusion_pytorch_model.safetensors files were modified by the
+AgroWM project through crop-specific full diffusion-transformer fine-tuning on
+plant growth pairs and Growth Scripts. They are not unmodified Qwen weights.
+They remain subject to the Qwen Research License's non-commercial restrictions.

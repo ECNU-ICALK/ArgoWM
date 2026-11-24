@@ -1,0 +1,19 @@
+<GROWTH_COT>
+Stage reasoning
+Current stage: S2.
+Future stage: S9.
+Growth plan
+Culm: The visible plant develops. Source=10.0%; Target=20.0%; Change=10.0 pp.
+Visible foreground area: The visible plant develops. Source=10.0%; Target=20.0%; Change=10.0 pp.
+Projected fill: The visible plant develops. Source=10.0%; Target=20.0%; Change=10.0 pp.
+Tassel: The visible plant develops.
+Ear: The visible plant develops.
+Visible yellow-brown composition: The visible plant develops. Source=10.0%; Target=20.0%; Change=10.0 pp.
+Target phenotype
+Culm: The plant is visible.
+Visible foreground area: The plant is visible.
+Projected fill: The plant is visible.
+Tassel: The plant is visible.
+Ear: The plant is visible.
+Visible yellow-brown composition: The plant is visible.
+</GROWTH_COT>

@@ -1,0 +1,89 @@
+{
+  "protocol_version": "wgsr_maize_four_way_v1",
+  "species": "maize",
+  "native_view": "sv1",
+  "executor_view": "side0",
+  "train_rows": 6400,
+  "validation_rows": 1600,
+  "split_unit": "plant_id",
+  "pair_policy": "same plant, strictly forward, cross-stage permitted",
+  "image_size": [
+    768,
+    1280
+  ],
+  "crop": false,
+  "time_condition_unit": "days",
+  "time_value": "actual_interval_days, without rounding",
+  "executor_protocol_version": "wgsr_maize_executor_days_v1",
+  "planner_protocol_version": "wgsr_maize_planner_direct_days_v1",
+  "teacher_protocol_root": "protocols/maize_sv1_v1/cot_v2_en_v2",
+  "training_target_usage": "image supervision and teacher CoT supervision",
+  "inference_target_usage": "evaluation reference only; never model input",
+  "training_initialization": "original pretrained models, no rice-finetuned checkpoint",
+  "methods": {
+    "source_copy": {
+      "training": false,
+      "prediction": "unchanged source image"
+    },
+    "gpt_image2": {
+      "training": false,
+      "model": "gpt-image-2",
+      "prompt": "same simple prompt as simple executor",
+      "provider_size": "auto",
+      "evaluation_size": [
+        768,
+        1280
+      ],
+      "resize": "LANCZOS if necessary; preserve raw provider output"
+    },
+    "simple": {
+      "training": "maize Qwen-Image-2.1 full DiT",
+      "condition": "source image and simple prompt"
+    },
+    "predicted_cot": {
+      "training": "maize Qwen3.8-27B LoRA planner and separate maize Qwen-Image-2.1 full DiT executor",
+      "executor_training_cot": "validated teacher annotation",
+      "inference_cot": "source-only maize planner prediction",
+      "teacher_fallback": false
+    }
+  },
+  "evaluation": {
+    "coverage": "all 1600 canonical validation IDs required for every method",
+    "primary": [
+      "SSIM",
+      "PSNR",
+      "foreground IoU",
+      "DINOv2 cosine"
+    ],
+    "phenotype": [
+      "culm proxy absolute error pp",
+      "foreground area absolute error pp",
+      "solidity absolute error pp",
+      "yellow-brown composition absolute error pp"
+    ],
+    "rice_stage_retrieval_bank": false,
+    "seeds": "identical per-query seeds for local executors; GPT Image API has no matched seed control"
+  },
+  "review_basis": "Existing maize data/quality/pair contracts and user-approved separate-species four-method comparison; implementation audit before preparing training commands. GPU memory/batch validation remains pending.",
+  "planner_recipe": {
+    "base": "Qwen3.8-27B",
+    "lora_rank": 32,
+    "lora_alpha": 64,
+    "loss_version": "wgsr_maize_planner_grouped_loss_v1",
+    "loss_weights": {
+      "stage": 0.1,
+      "metric": 0.4,
+      "text": 0.5
+    },
+    "metric_slots": [
+      "culm",
+      "leaves_area",
+      "plant_density",
+      "plant_color_development"
+    ],
+    "organ_visibility_group": "text",
+    "culm_stable_suppression_group": "metric",
+    "epochs": 2,
+    "global_batch": 16
+  }
+}

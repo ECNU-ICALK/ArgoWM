@@ -1,0 +1,4 @@
+numpy>=2
+Pillow>=11
+PyYAML>=6
+scipy>=1.14

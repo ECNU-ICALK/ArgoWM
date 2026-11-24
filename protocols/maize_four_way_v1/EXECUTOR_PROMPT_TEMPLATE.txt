@@ -1,0 +1,3 @@
+IMAGE 1 is SOURCE_IMAGE. Generate the same maize plant after the specified interval. Maize plant ID: {plant_id}. Shared view: sv1 (side view). Prediction interval: {actual_interval_days} days.
+
+Preserve the plant identity, the position of the stem base, the continuity of the established main stem, and the attachment of existing leaves and visible reproductive organs. Show plausible growth and senescence over the interval. Keep the same camera view, image framing, scale, and pure white background. Do not infer or reconstruct plant parts hidden by a pot. Return only the future plant image.

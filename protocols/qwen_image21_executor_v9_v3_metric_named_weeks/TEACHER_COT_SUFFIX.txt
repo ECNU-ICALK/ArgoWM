@@ -1,0 +1,5 @@
+
+Growth plan for the target image:
+<GROWTH_COT>
+{growth_cot}
+</GROWTH_COT>

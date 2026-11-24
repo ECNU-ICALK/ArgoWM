@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "authority": "user_table_overrides_reference_pdf",
+  "stages": [
+    {
+      "stage_id": "S1",
+      "days_after_sowing": 25,
+      "maize_stage": "V3",
+      "authority": "user_supplied_mapping",
+      "name_en": "Third-leaf stage",
+      "visible_description_en": "The collar of the third leaf is visible; the seedling has a compact form, while the root system and early leaf area continue to develop."
+    },
+    {
+      "stage_id": "S2",
+      "days_after_sowing": 32,
+      "maize_stage": "V5",
+      "authority": "user_supplied_mapping",
+      "name_en": "Fifth-leaf stage",
+      "visible_description_en": "The collar of the fifth leaf is visible; leaf number and expanded leaf area increase, and the stem base and canopy begin to expand noticeably."
+    },
+    {
+      "stage_id": "S3",
+      "days_after_sowing": 50,
+      "maize_stage": "V7",
+      "authority": "user_supplied_mapping",
+      "name_en": "Seventh-leaf stage",
+      "visible_description_en": "The collar of the seventh leaf is visible; the canopy expands rapidly, and stem and internode elongation become more pronounced."
+    },
+    {
+      "stage_id": "S4",
+      "days_after_sowing": 59,
+      "maize_stage": "V10",
+      "authority": "user_supplied_mapping",
+      "name_en": "Tenth-leaf stage",
+      "visible_description_en": "Vegetative growth is vigorous; plant height, leaf area, and internode length increase rapidly."
+    },
+    {
+      "stage_id": "S5",
+      "days_after_sowing": 70,
+      "maize_stage": "V14",
+      "authority": "user_supplied_mapping",
+      "name_en": "Rapid-growth stage",
+      "visible_description_en": "Upper leaves expand rapidly, and the stem grows taller as the plant gradually develops its pre-tasseling form."
+    },
+    {
+      "stage_id": "S6",
+      "days_after_sowing": 78,
+      "maize_stage": "VT",
+      "authority": "user_supplied_mapping",
+      "name_en": "Tasseling stage",
+      "visible_description_en": "The tassel is fully emerged at the top; the plant approaches its maximum height, and the main canopy and stem structure are largely established."
+    },
+    {
+      "stage_id": "S7",
+      "days_after_sowing": 85,
+      "maize_stage": "R1",
+      "authority": "user_supplied_mapping",
+      "name_en": "Silking stage",
+      "visible_description_en": "Silks emerge from the ear husks as the plant enters the pollination period; the vegetative organs remain broadly stable."
+    },
+    {
+      "stage_id": "S8",
+      "days_after_sowing": 91,
+      "maize_stage": "R3",
+      "authority": "user_supplied_mapping",
+      "name_en": "Milk stage",
+      "visible_description_en": "Kernels enter the milk and rapid grain-filling stage; ear mass increases, while plant height and the main leaf arrangement remain largely stable."
+    },
+    {
+      "stage_id": "S9",
+      "days_after_sowing": 113,
+      "maize_stage": "R6",
+      "authority": "user_supplied_mapping",
+      "name_en": "Physiological-maturity stage",
+      "visible_description_en": "Kernels reach physiological maturity; the leaves and stems show pronounced senescence, yellowing, or drying."
+    }
+  ],
+  "language": "en"
+}

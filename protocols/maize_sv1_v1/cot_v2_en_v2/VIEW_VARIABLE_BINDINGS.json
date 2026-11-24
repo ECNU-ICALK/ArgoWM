@@ -1,0 +1,72 @@
+{
+  "protocol_version": "maize_sv1_cot_v2",
+  "view": "front",
+  "accepted_input_views": [
+    "sv1"
+  ],
+  "excluded_input_views": [
+    "sv2"
+  ],
+  "ordered_keys": [
+    "culm",
+    "leaves_area",
+    "plant_density",
+    "tassel",
+    "ear",
+    "plant_color_development"
+  ],
+  "fields": {
+    "culm": {
+      "metric_key": "front_height_from_image_bottom_pct",
+      "owner": "local_image_metrics",
+      "unit": "percent_of_image_height",
+      "meaning_en": "Visible vertical extent from the image bottom to the highest plant foreground row."
+    },
+    "leaves_area": {
+      "metric_key": "visible_foreground_area_pct",
+      "owner": "local_image_metrics",
+      "unit": "percent_of_full_image",
+      "input_scale": "percent",
+      "meaning_en": "Visible plant foreground as a fraction of the full image; not true plant leaf area."
+    },
+    "plant_density": {
+      "metric_key": "solidity",
+      "owner": "local_image_metrics",
+      "unit": "fraction",
+      "input_scale": "fraction",
+      "meaning_en": "Two-dimensional projected fill: plant foreground divided by its rasterized convex-hull area."
+    },
+    "tassel": {
+      "metric_key": "tassel_presence",
+      "owner": "manual",
+      "unit": "binary_visibility",
+      "meaning_en": "Manually observed visibility of the apical tassel in the current image: visible or not visible."
+    },
+    "ear": {
+      "metric_key": "ear_presence",
+      "owner": "manual",
+      "unit": "binary_visibility",
+      "meaning_en": "Manually observed visibility of the axillary ear in the current image: visible or not visible."
+    },
+    "plant_color_development": {
+      "metric_key": "yellow_brown_fraction",
+      "owner": "local_image_metrics",
+      "unit": "fraction",
+      "input_scale": "fraction",
+      "meaning_en": "Yellow plus brown fraction of classifiable plant foreground; visible color only."
+    }
+  },
+  "manual_annotation_contract": {
+    "status_values": [
+      "visible",
+      "not_visible"
+    ],
+    "initial_value": "",
+    "organ_fields": [
+      "tassel",
+      "ear"
+    ],
+    "definition": "visible means the organ is visible in the current image; not_visible means it is not visible in the current image. No separate reason or obstruction category is recorded.",
+    "leaf_counts": "excluded_from_v2"
+  }
+}

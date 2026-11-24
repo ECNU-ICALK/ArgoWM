@@ -1,0 +1,236 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cot-maize.local/v2/output/front.schema.json",
+  "title": "Maize sv1 CoT v2 qualitative annotation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stage_reasoning",
+    "growth_plan",
+    "target_phenotype"
+  ],
+  "properties": {
+    "stage_reasoning": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "current_stage",
+        "future_stage"
+      ],
+      "properties": {
+        "current_stage": {
+          "type": "string",
+          "enum": [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6",
+            "S7",
+            "S8",
+            "S9"
+          ]
+        },
+        "future_stage": {
+          "type": "string",
+          "enum": [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6",
+            "S7",
+            "S8",
+            "S9"
+          ]
+        }
+      }
+    },
+    "growth_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "culm",
+        "leaves_area",
+        "plant_density",
+        "tassel",
+        "ear",
+        "plant_color_development"
+      ],
+      "properties": {
+        "culm": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 3
+            }
+          }
+        },
+        "leaves_area": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 3
+            }
+          }
+        },
+        "plant_density": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 3
+            }
+          }
+        },
+        "tassel": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 3
+            }
+          }
+        },
+        "ear": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 3
+            }
+          }
+        },
+        "plant_color_development": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 3
+            }
+          }
+        }
+      }
+    },
+    "target_phenotype": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "culm",
+        "leaves_area",
+        "plant_density",
+        "tassel",
+        "ear",
+        "plant_color_development"
+      ],
+      "properties": {
+        "culm": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 3
+            }
+          }
+        },
+        "leaves_area": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 3
+            }
+          }
+        },
+        "plant_density": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 3
+            }
+          }
+        },
+        "tassel": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 3
+            }
+          }
+        },
+        "ear": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 3
+            }
+          }
+        },
+        "plant_color_development": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 3
+            }
+          }
+        }
+      }
+    }
+  }
+}
