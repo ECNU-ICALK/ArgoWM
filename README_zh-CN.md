@@ -4,7 +4,7 @@
 <p>Built with Qwen</p>
 <p><strong>先推理发育过程，再生成未来生长图像。</strong></p>
 <p><a href="README.md">English</a> · <strong>简体中文</strong></p>
-<p><a href="docs/INSTALL.md">安装</a> · <a href="docs/RUNNING.md">训练与推理</a> · <a href="docs/RESULTS.md">实验结果</a> · <a href="protocols/README.md">Prompt 与协议</a></p>
+<p><a href="https://arxiv.org/abs/2611.26145">论文（arXiv）</a> · <a href="docs/INSTALL.md">安装</a> · <a href="docs/RUNNING.md">训练与推理</a> · <a href="docs/RESULTS.md">实验结果</a> · <a href="protocols/README.md">Prompt 与协议</a></p>
 </div>
 
 ![AgroWM：发育推理、Growth Script 与图像生成](assets/method-overview.png)
@@ -15,7 +15,7 @@
 
 **AgroWM** 研究农业世界建模：从一张植物照片及预测间隔，预测**同一株植物**在数天至数月后的外观。**PhenoClock** 推断当前阶段、预测未来阶段并生成结构化的 **Growth Script**；**Rooted Renderer** 根据脚本编辑源照片，保留植物身份、视角和构图，并生成相应的器官、形态和颜色变化。
 
-对应论文题目为 **Can World Models Predict Rice Growth? Toward Agricultural World Models**。水稻和玉米使用同一框架，分别从原始预训练模型训练。
+对应论文题目为 **[Can World Models Predict Rice Growth? Toward Agricultural World Models](https://arxiv.org/abs/2611.26145)**。水稻和玉米使用同一框架，分别从原始预训练模型训练。
 
 | 项目 | 说明 |
 |---|---|

@@ -5,7 +5,7 @@
 <p><strong>Reason about development. Then render growth.</strong></p>
 <p>Forecast the same plant over days to months from a single photograph.</p>
 <p><strong>English</strong> · <a href="README_zh-CN.md">简体中文</a></p>
-<p><a href="#quick-start">Quick start</a> · <a href="docs/RESULTS.md">Results</a> · <a href="protocols/README.md">Prompts</a> · <a href="docs/RUNNING.md">Training &amp; evaluation</a></p>
+<p><a href="https://arxiv.org/abs/2611.26145">Paper (arXiv)</a> · <a href="#quick-start">Quick start</a> · <a href="docs/RESULTS.md">Results</a> · <a href="protocols/README.md">Prompts</a> · <a href="docs/RUNNING.md">Training &amp; evaluation</a></p>
 
 </div>
 
@@ -17,7 +17,7 @@
 
 **AgroWM** is a two-stage framework for agricultural world modeling: predicting how the **same plant** will look at a requested future horizon. **PhenoClock** infers the current developmental stage, predicts the future stage, and writes a structured **Growth Script**. The **Rooted Renderer** edits the source photograph using that script while preserving the plant's identity, viewpoint, and framing.
 
-The accompanying manuscript is titled **“Can World Models Predict Rice Growth? Toward Agricultural World Models.”** The mainline experiments cover rice and maize, with independently trained models for each crop.
+The accompanying manuscript is titled **[“Can World Models Predict Rice Growth? Toward Agricultural World Models.”](https://arxiv.org/abs/2611.26145)** The mainline experiments cover rice and maize, with independently trained models for each crop.
 
 > **Core idea:** the horizon alone does not determine a plant's future appearance. Forecast its developmental state before generating the image.
 
